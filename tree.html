@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="style.css">
+    <script src="js/d3.v3.min.js"></script>
+    <title>师门树</title>
+</head>
+<body>
+    
+    <div class="bg"></div>
+    <div class="mask"></div>
+    <div class="flex-container">
+    <p id="title">师门树</p>
+    <textarea class="center" type="textarea" id="text" cols="60" rows="10" placeholder="请输入学术家族树："></textarea>
+    </br>
+    <div style="text-align:center;">
+        <button class="button1" href="javascript:;" onclick="getdata()">创建师门树</button>
+    </div>
+    
+    </div>
+    <script>
+        var treeData = [{
+            "name": "",
+            "parent": "",
+            "children": [
+                {
+                "name": "",
+                "parent": "",
+                "children": [
+                    {
+                    "name": "",
+                    "parent": ""
+                }, 
+                {
+                    "name": "",
+                    "parent": "",
+                    "children": [
+                        {
+                        "name": "",
+                        parent: ""
+                    }]
+                }, 
+                {
+                    "name": "",
+                    "parent": ""
+                }, {
+                    "name": "",
+                    "parent": ""
+                }]
+            }, {
+                "name": "",
+                "parent": "",
+                "children": [{
+                    "name": "",
+                    "parent": ""
+                }, {
+                    "name": "",
+                    "parent": ""
+                }, ]
+
+            }, {
+                "name": "",
+                "parent": ""
+            }, ]
+        }];
+
+        function getdata() {
+            var text = $("#text").val(); //获取信息————获取文本框输入的信息
+            var text1 = text.split("\n\n\n");//分组————使用split函数进行分割
+            for (var k = 0; k < text1.length; k++) {
+                var text2=text1[k].split("\n\n");//分割开师门树和技能点信息
+                var arry = text2[0].split("\n");//针对每一组数据，以“\n"为关键字进行分组，得到每条导师和学生的信息
+                for(var j=1;j<text2.length;j++)//把技能树、工作经历的信息添加到师门书末端
+                {
+                    arry.push(text2[j]);
+                }
+
+                var teacher = {
+                        name: '',
+                        children: []
+                    }
+                for (var ii = 0; ii < arry.length; ii++) {
+                    var newarr = arry[ii].split("：");//以“：”为关键字进行分组，可得到身份标签和身份信息
+                    var type = [];
+                    var type1 = [];
+                    var a1 = newarr[0]; //获取身份标签，保存在a1
+                    if (ii != 0) {
+                        type1.name = a1;
+                    }
+                    var a2 = newarr[1];//获取身份信息，保存在a2
+                    var a3 = a2.split("、");//针对每组身份信息，以“、”为关键字进行切分，得到每个人的名字信息
+                    for (var j = 0; j < a3.length; j++) { //a3.length用于得到每条身份信息里名字的数量
+
+                        var student = {};
+                        if (ii == 0) {
+                            teacher.name = a3[j];
+                        }
+                        if (ii != 0) {
+                            student.name = a3[j];
+                            type.push(student);
+
+                        }
+                    }
+                    if (ii != 0) {
+                        type1.children = type;
+                        teacher.children.push(type1);
+                    }
+                }
+
+                treeData[k] = [];
+                treeData[k] = teacher;
+                maketree(k);
+            }
+        }
+    </script>
+</body>
+
+</html>
