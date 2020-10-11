@@ -8,12 +8,10 @@
 ## 文件说明
 
 + tree.html 中包含了 html 框架和 JavaScript 的内容
-
 + tree.css 是自己编写的css文件
-
 + css、js、bootstrap这几个文件夹中包含了使用的框架等依赖文件
-
 + img 文件夹中包含了背景图片和 Logo 图
++ 安装和配置 jest+vuetest-utils 的简易教程.md 文件是单元测试的简易教程
 
 ## 测试说明
 
