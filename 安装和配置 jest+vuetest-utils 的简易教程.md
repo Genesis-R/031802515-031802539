@@ -19,12 +19,12 @@
 7.配置 jest.conf.js 配置文件：
 ```
 import { mount } from '@vue/test-utils'
-import Component from './component'
+import Component from './functions'
 
 describe('Component', () => {
-  test('是一个 Vue 实例', () => {
+  test('单棵树', () => {
     const wrapper = mount(Component)
-    expect(wrapper.isVueInstance()).toBeTruthy()
+    expect(wrapper.functions()).toEqual()
   })
 })
 ```
@@ -45,4 +45,6 @@ expect().toBeFalsy//toBeFalsy 匹配任何 if 语句为假
 //数字匹配器
 expect().toBeGreaterThan//大于
 expect().toBeLessThan//小于
+expect().toBeGreaterThanOrEqual//大于等于
+expect().toBELessThanOrEqual//小于等于
 ```
