@@ -1,0 +1,97 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: "Open Sans","PingFang SC","Microsoft YaHei","Helvetica Neue","Hiragino Sans GB","WenQuanYi Micro Hei",Arial,sans-serif;
+}
+.bg{
+	background: url('img/16037.jpg');
+    background-size: cover;
+    position: fixed;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    -webkit-filter: blur(15px);
+            filter: blur(15px);
+    z-index: -1;
+}
+.mask {
+  width: 80px;
+  height: 80px;
+  margin-top:10px;
+  background-image: url('img/shu.png');
+  background-size: cover;
+  border-radius: 15px;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.flex-container {
+    background-size: 100% 100%;
+    background-attachment: fixed;
+}
+
+.center {
+	border-color:#fff;
+	float:left;
+    display: block;
+    border-radius: 7px;
+}
+
+.button1 {
+	background-color:#fff;
+	color:#6AAFD1;
+	float:left;
+    width: 100px;
+    padding: 4px;
+    border-radius: 7px;
+}
+
+.button2 {
+	background-color:#fff;
+	color:#6AAFD1;
+	float:left;
+    width: 100px;
+    padding: 4px;
+    border-radius: 7px;
+}
+
+.node {
+    cursor: auto;
+}
+
+.node circle {
+    fill: #61a5ea17453164;
+    stroke-width: 3px;
+}
+
+.node rect {
+    fill: #6AAFD1;
+    stroke: #6AAFD1;
+    stroke-width: 7px;
+}
+
+.node text {
+    font: 12px "微软雅黑", sans-serif;
+}
+
+.link {
+    fill: none;
+    stroke:#fff;
+    stroke-width: 2px;
+}
+
+#title {
+    text-align: center;
+    font-family: "微软雅黑";
+    font-size: 25px;
+    color:#fff;
+    line-height: 50px;
+}
