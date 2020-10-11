@@ -20,15 +20,14 @@ body {
     z-index: -1;
 }
 .mask {
-  width: 80px;
-  height: 80px;
-  margin-top:10px;
-  background-image: url('img/u.jpg');
-  background-size: cover;
-  border-radius: 15px;
+    width: 80px;
+    height: 80px;
+    margin-top:10px;
+    background-image: url('img/u.jpg');
+    background-size: cover;
+    border-radius: 15px;
 }
-
-p {
+p{
     margin: 0;
     padding: 0;
 }
@@ -55,7 +54,32 @@ p {
     border-color: :#0f0f0f;
 }
 
+.node {
+    height: 10px;
+    cursor: auto;
+    text-align: center;
+}
 
+.node circle {
+    stroke-width: 3px;
+}
+
+.node rect {
+    fill: black;
+    stroke:rgb(238, 245, 145);
+    stroke-width: 2px;
+    text-align: center;
+}
+
+.node text {
+    
+}
+
+.link {
+    fill: none;
+    stroke:#fff;
+    stroke-width: 2px;
+}
 
 #title {
     text-align: center;
